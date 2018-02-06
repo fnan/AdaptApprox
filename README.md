@@ -32,13 +32,13 @@ There are 3 inputs to run this program and several others to be supplied in a `.
 
 ## INPUTS:
 1. `param_file`: each row corresponds to a setting in the order of (Lambda, LearningRate, P_full, nTrees, max_em_iter, interval, depth). A sample parameter generating file is `mbne_param_gen.m`.
-..* `Lambda`: multiplier of the feature acquisition costs
-..* `LearningRate`: learning rate for the gradient boosted trees
-..* `P_full`: fraction of examples to be sent to the complex classifier
-..* `nTrees`: number of trees for gating function, same number of trees for low prediction cost model
-..* `max_em_iter`: maximun number of alternating minimization iterations
-..* `interval`: evaluation interval in the number of trees. The outputs will be evaluated using the first interval, 2*interval, ... trees for gating and LPC. Total number of evaluations will be nTrees/interval.
-..* `depth`: depth of trees for gating and LPC
+- `Lambda`: multiplier of the feature acquisition costs
+- `LearningRate`: learning rate for the gradient boosted trees
+- `P_full`: fraction of examples to be sent to the complex classifier
+- `nTrees`: number of trees for gating function, same number of trees for low prediction cost model
+- `max_em_iter`: maximun number of alternating minimization iterations
+- `interval`: evaluation interval in the number of trees. The outputs will be evaluated using the first interval, 2*interval, ... trees for gating and LPC. Total number of evaluations will be nTrees/interval.
+- `depth`: depth of trees for gating and LPC
 
 2. `setting_id`: the row number in param_file to execute
 
@@ -47,18 +47,18 @@ There are 3 inputs to run this program and several others to be supplied in a `.
 Other required inputs: (specified in line 34-39 of experiment_mbne.m)
 
 4. data_file: mat file containing the basic input data to the algorithm. See mbne_cs_em.mat for example.
-..* xtr: training data, dimension = # training examples x # features
-..* xtv: validation data, dimension = # validation examples x # features
-..* xte: test data, dimension = # test examples x # features
-..* ytr: class label. -1/1 for binary classification, dimension = # training examples x 1
-..* ytv: class label. -1/1 for binary classification, dimension = # validation examples x 1
-..* yte: class label. -1/1 for binary classification, dimension = # test examples x 1
-..* cost: feature acquisition cost vector, dimension = # features x 1
-..* proba_pred_train: probability of class prediction from the High-Prediction-Cost (HPC) model, dimension = # training examples x # classes
-..* proba_pred_val: probability of class prediction from the High-Prediction-Cost (HPC) model, dimension = # validation examples x # classes
-..* proba_pred_test: probability of class prediction from the High-Prediction-Cost (HPC) model, dimension = # test examples x # classes
-..* feature_usage_val: feature usage matrix for validation data by HPC model, dimension = # validation examples x # features. (i,j) element is 1 if feature j is used for example i by HPC; otherwise it is 0.
-..* feature_usage_test: feature usage matrix for test data by HPC model, dimension = # test examples x # features. (i,j) element is 1 if feature j is used for example i by HPC; otherwise it is 0.
+- xtr: training data, dimension = # training examples x # features
+- xtv: validation data, dimension = # validation examples x # features
+- xte: test data, dimension = # test examples x # features
+- ytr: class label. -1/1 for binary classification, dimension = # training examples x 1
+- ytv: class label. -1/1 for binary classification, dimension = # validation examples x 1
+- yte: class label. -1/1 for binary classification, dimension = # test examples x 1
+- cost: feature acquisition cost vector, dimension = # features x 1
+- proba_pred_train: probability of class prediction from the High-Prediction-Cost (HPC) model, dimension = # training examples x # classes
+- proba_pred_val: probability of class prediction from the High-Prediction-Cost (HPC) model, dimension = # validation examples x # classes
+- proba_pred_test: probability of class prediction from the High-Prediction-Cost (HPC) model, dimension = # test examples x # classes
+- feature_usage_val: feature usage matrix for validation data by HPC model, dimension = # validation examples x # features. (i,j) element is 1 if feature j is used for example i by HPC; otherwise it is 0.
+- feature_usage_test: feature usage matrix for test data by HPC model, dimension = # test examples x # features. (i,j) element is 1 if feature j is used for example i by HPC; otherwise it is 0.
 
 ## OUTPUTS:
 results are saved into file that contains:
